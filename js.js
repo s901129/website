@@ -1,0 +1,21 @@
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if(this.scrollY>20){
+            $(".navbar").addClass("sticky");
+            $(".menu-toggler").addClass("black");
+            $("#go-top").show();
+            }
+        else{
+            $(".navbar").removeClass("sticky");
+            $(".menu-toggler").removeClass("black");
+            $("#go-top").hide();
+            }
+    });
+    $(".menu-toggler").click(function(){
+        $(this).toggleClass("active");
+        $(".navbar-menu").toggleClass("active");
+    });
+    $("#go-top").click(function(){
+       $("html,body").animate({scrollTop:0},800);
+    });
+});
